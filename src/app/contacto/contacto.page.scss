@@ -1,0 +1,148 @@
+/* --- HERO DE CONTACTO --- */
+.contact-hero {
+  padding: 44px 28px 36px;
+}
+
+.contact-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gf-accent-primary);
+  margin: 0 0 12px;
+
+  /* Punto de estado: indicador online */
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.contact-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 14vw, 64px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--gf-text-primary);
+  margin: 0 0 20px;
+}
+
+.contact-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gf-text-secondary);
+  margin: 0;
+  max-width: 320px;
+}
+
+/* --- LISTA DE CANALES --- */
+.channels-list {
+  padding: 8px 20px 0;
+}
+
+/* Cada canal: fila táctil con icono, info y flecha */
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 8px;
+  border-bottom: 1px solid var(--gf-border-glass);
+  text-decoration: none;
+  transition: background 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active {
+    background: rgba(124, 58, 237, 0.06);
+    border-radius: 12px;
+  }
+}
+
+.channel-static {
+  cursor: default;
+}
+
+/* Icono en círculo tenue */
+.channel-icon-wrap {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-icon {
+    font-size: 20px;
+    color: var(--gf-accent-primary);
+  }
+}
+
+/* Bloque de texto */
+.channel-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.channel-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gf-text-muted);
+}
+
+.channel-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--gf-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Flecha de navegación */
+.channel-arrow {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: var(--gf-text-muted);
+}
+
+/* --- CTA ENVIAR CORREO --- */
+.cta-wrapper {
+  padding: 36px 28px 48px;
+}
+
+.btn-send {
+  --background: var(--gf-accent-primary);
+  --background-hover: var(--gf-accent-hover);
+  --background-activated: var(--gf-accent-hover);
+  --border-radius: 14px;
+  --color: #FAFAFA;
+  --box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+  height: 56px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}

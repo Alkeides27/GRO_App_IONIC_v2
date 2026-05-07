@@ -1,0 +1,66 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+
+/*
+  Variables de la paleta personalizada del proyecto.
+  Definidas aquí para reutilizarlas desde cualquier componente
+  sin repetir valores hexadecimales en múltiples archivos.
+*/
+:root {
+  --gf-bg-primary: #0A0E27;
+  --gf-bg-secondary: #131B3D;
+  --gf-bg-glass: rgba(19, 27, 61, 0.6);
+
+  --gf-accent-primary: #7C3AED;
+  --gf-accent-hover: #6D28D9;
+  --gf-accent-soft: rgba(124, 58, 237, 0.15);
+
+  --gf-text-primary: #F5F5F7;
+  --gf-text-secondary: #A1A1AA;
+  --gf-text-muted: #71717A;
+
+  --gf-border-glass: rgba(255, 255, 255, 0.08);
+  --gf-shadow-soft: 0 8px 32px rgba(124, 58, 237, 0.15);
+
+  /*
+    Sobreescribo los tokens nativos de Ionic para que toda la app,
+    incluyendo el menú lateral, use Deep Navy (#0A0E27) como base.
+    Sin esto, dark.system.css empuja --ion-background-color a negro puro.
+  */
+  --ion-background-color: #0A0E27;
+  --ion-background-color-rgb: 10, 14, 39;
+  --ion-text-color: #F5F5F7;
+  --ion-text-color-rgb: 245, 245, 247;
+  --ion-color-step-50: #131B3D;
+  --ion-color-step-100: #1a2348;
+  --ion-color-step-150: #202b54;
+  --ion-color-step-200: #27335f;
+}
+
+/* Aplico la paleta a los tokens nativos de Ionic */
+ion-content {
+  --background: var(--gf-bg-primary);
+  --color: var(--gf-text-primary);
+}
+
+ion-toolbar {
+  --background: var(--gf-bg-primary);
+  --color: var(--gf-text-primary);
+  --border-color: transparent;
+}
+
+/* Eliminar el borde negro que Ionic genera entre el split-pane y el contenido */
+ion-split-pane {
+  --border: none;
+  --side-max-width: 280px;
+  --side-min-width: 220px;
+}
+
+ion-menu {
+  --background: #0A0E27;
+}
+
+/* Forzar fondo oscuro en todo el shell de la app */
+ion-app {
+  background: #0A0E27;
+}

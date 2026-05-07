@@ -1,0 +1,77 @@
+<!-- Header con menú -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Información Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Sección 1: Perfil Académico — tratamiento editorial, sin card -->
+  <div class="profile-section">
+    <p class="section-eyebrow">Sobre mí</p>
+    <h2 class="section-title">Perfil Académico</h2>
+    <p class="profile-text">
+      Actualmente cursando Ingeniería en Informática en la UNETI de Venezuela, con especial interés en desarrollo full-stack y gestión de proyectos.
+    </p>
+  </div>
+
+  <!-- Separador visual -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- Sección 2: Stack Tecnológico — layout asimétrico, chips grandes -->
+  <div class="stack-section">
+    <p class="section-eyebrow">Stack</p>
+    <h2 class="section-title">Tecnologías</h2>
+
+    <div class="stack-group">
+      <p class="stack-label">Frontend</p>
+      <div class="chip-row">
+        <ion-chip class="chip-tech"><ion-label>Angular</ion-label></ion-chip>
+        <ion-chip class="chip-tech"><ion-label>Ionic</ion-label></ion-chip>
+        <ion-chip class="chip-tech"><ion-label>React Native</ion-label></ion-chip>
+      </div>
+    </div>
+
+    <div class="stack-group">
+      <p class="stack-label">Backend</p>
+      <div class="chip-row">
+        <ion-chip class="chip-tech chip-featured"><ion-label>Django</ion-label></ion-chip>
+      </div>
+    </div>
+  </div>
+
+  <!-- Separador visual -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- Sección 3: Proyecto Destacado — card de cristal, contenido expandido -->
+  <div class="project-section">
+    <p class="section-eyebrow">Proyecto</p>
+    <ion-card class="glass-card project-card">
+      <ion-card-content>
+        <p class="project-tag">PST III</p>
+        <h3 class="project-name">CANTV-APP</h3>
+        <p class="project-desc">
+          Desarrollo de Aplicación Móvil de Gestión de Combustible en los Motogeneradores Eléctricos en CANTV Lara, Región Occidente.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Sección 4: Intereses — chips en flujo libre -->
+  <div class="interests-section">
+    <p class="section-eyebrow">Más sobre mí</p>
+    <h2 class="section-title">Otros Intereses</h2>
+    <div class="chip-row interests-chips">
+      <ion-chip class="chip-interest"><ion-label>Idiomas</ion-label></ion-chip>
+      <ion-chip class="chip-interest"><ion-label>Asistencia Virtual</ion-label></ion-chip>
+      <ion-chip class="chip-interest"><ion-label>Comunicación</ion-label></ion-chip>
+      <ion-chip class="chip-interest"><ion-label>Música</ion-label></ion-chip>
+      <ion-chip class="chip-interest"><ion-label>Ciencia</ion-label></ion-chip>
+    </div>
+  </div>
+
+</ion-content>

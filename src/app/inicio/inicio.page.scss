@@ -1,0 +1,152 @@
+/* --- ARTE DE FONDO ORBITAL --- */
+.orbital-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+/* Órbita grande: fuera de pantalla arriba-derecha */
+.orbit-1 {
+  width: 560px;
+  height: 560px;
+  top: -200px;
+  right: -200px;
+  animation: spin 60s linear infinite;
+}
+
+/* Órbita media: abajo-izquierda */
+.orbit-2 {
+  width: 320px;
+  height: 320px;
+  bottom: -80px;
+  left: -120px;
+  border-color: rgba(124, 58, 237, 0.08);
+  animation: spin 90s linear infinite reverse;
+}
+
+/* Punto luminoso central de la órbita 1 */
+.orbit-1::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--gf-accent-primary);
+  border-radius: 50%;
+  top: 50%;
+  right: -3px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 12px 4px rgba(124, 58, 237, 0.6);
+}
+
+.orbit-3 {
+  width: 180px;
+  height: 180px;
+  top: 40%;
+  left: -60px;
+  border-color: rgba(124, 58, 237, 0.06);
+  animation: spin 45s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* --- HERO WRAPPER --- */
+.hero-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 80px 28px 48px;
+}
+
+/* Eyebrow: etiqueta de rol, pequeña y tenue */
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gf-accent-primary);
+  margin: 0 0 20px;
+}
+
+/* Título hero: el elemento dominante */
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(44px, 12vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--gf-text-primary);
+  margin: 0 0 28px;
+}
+
+/* El nombre: mismo color base, diferencia solo en el tamaño implícito al ser el último bloque */
+.name-accent {
+  color: var(--gf-text-primary);
+  display: block;
+}
+
+/* Cuerpo del hero: moderado para no competir con el título */
+.hero-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--gf-text-secondary);
+  max-width: 340px;
+  margin: 0 0 44px;
+}
+
+/* CTA principal */
+.btn-cta {
+  --background: var(--gf-accent-primary);
+  --background-hover: var(--gf-accent-hover);
+  --background-activated: var(--gf-accent-hover);
+  --border-radius: 14px;
+  --color: #FAFAFA;
+  --box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+  height: 56px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  margin: 0;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Indicador de scroll: línea animada */
+.scroll-hint {
+  display: flex;
+  justify-content: center;
+  margin-top: 52px;
+
+  span {
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(124, 58, 237, 0.6));
+    animation: fadeDown 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeDown {
+  0%, 100% { opacity: 0; transform: translateY(-8px); }
+  50% { opacity: 1; transform: translateY(0); }
+}

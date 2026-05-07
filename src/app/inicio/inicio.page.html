@@ -1,0 +1,46 @@
+<!-- Header flotante con efecto translúcido sobre el fondo -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Pantalla completa: el hero ocupa el viewport entero -->
+<ion-content [fullscreen]="true">
+
+  <!-- Arte de fondo: círculos orbitales decorativos -->
+  <div class="orbital-bg" aria-hidden="true">
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+    <div class="orbit orbit-3"></div>
+  </div>
+
+  <!-- Hero principal centrado con jerarquía extrema -->
+  <div class="hero-wrapper">
+
+    <!-- Eyebrow: etiqueta de rol pequeña, en mayúsculas -->
+    <p class="eyebrow">Ingeniería en Informática · UNETI · Venezuela</p>
+
+    <!-- Título de impacto: Montserrat 800, enorme -->
+    <h1 class="hero-title">¡Hola, soy<br><span class="name-accent">GianneFran.</span></h1>
+
+    <!-- Descripción breve -->
+    <p class="hero-body">
+      Apasionada por la reutilización y optimización de software. Creo soluciones que impactan positivamente el entorno social y tecnológico.
+    </p>
+
+    <!-- CTA: botón sólido, expand block en mobile -->
+    <ion-button class="btn-cta" routerLink="/informacion-personal" expand="block">
+      Explorar mi Trayectoria
+    </ion-button>
+
+    <!-- Indicador discreto de scroll -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </div>
+
+</ion-content>
