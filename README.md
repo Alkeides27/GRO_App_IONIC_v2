@@ -65,7 +65,3 @@ ionic serve
 ## Evidencias
 
 Las capturas de pantalla del proceso de desarrollo paso a paso están en la carpeta `evidencias/`.
-
-## Repositorio
-
-https://github.com/Alkeides27/Tarea-1-Giannefran
