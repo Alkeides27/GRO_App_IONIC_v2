@@ -19,7 +19,7 @@
     </p>
   </div>
 
-  <!-- Canales de contacto: lista suelta, sin card contenedora -->
+  <!-- Canales de contacto: lista interactiva -->
   <div class="channels-list">
 
     <a class="channel-item" href="mailto:apakuamita17@proton.me">
@@ -33,7 +33,7 @@
       <ion-icon name="chevron-forward-outline" class="channel-arrow"></ion-icon>
     </a>
 
-    <a class="channel-item" href="tel:+584120760727">
+    <a class="channel-item" (click)="openWhatsApp()">
       <div class="channel-icon-wrap">
         <ion-icon name="logo-whatsapp"></ion-icon>
       </div>
@@ -44,7 +44,7 @@
       <ion-icon name="chevron-forward-outline" class="channel-arrow"></ion-icon>
     </a>
 
-    <a class="channel-item" href="https://github.com/apakuamita17" target="_blank" rel="noopener">
+    <a class="channel-item" (click)="openGitHub()">
       <div class="channel-icon-wrap">
         <ion-icon name="logo-github"></ion-icon>
       </div>
@@ -55,7 +55,7 @@
       <ion-icon name="chevron-forward-outline" class="channel-arrow"></ion-icon>
     </a>
 
-    <div class="channel-item channel-static">
+    <div class="channel-item" (click)="openLocation()">
       <div class="channel-icon-wrap">
         <ion-icon name="location-outline"></ion-icon>
       </div>
@@ -63,15 +63,106 @@
         <span class="channel-label">Ubicación</span>
         <span class="channel-value">Barquisimeto, Edo. Lara</span>
       </div>
+      <ion-icon name="chevron-forward-outline" class="channel-arrow"></ion-icon>
     </div>
 
   </div>
 
-  <!-- CTA de correo: botón sólido, full-width -->
-  <div class="cta-wrapper">
-    <ion-button expand="block" class="btn-send" href="mailto:apakuamita17@proton.me">
-      Enviar correo
-    </ion-button>
+  <!-- Formulario de contacto reactivo -->
+  <div class="form-section">
+    <p class="form-eyebrow">Escribime</p>
+    <h2 class="form-title">Enviar mensaje</h2>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- Campo: Nombre completo -->
+      <div class="form-field">
+        <label class="form-label" for="nombre">Nombre completo</label>
+        <ion-input
+          id="nombre"
+          formControlName="nombre"
+          placeholder="Tu nombre"
+          class="custom-input"
+          [class.input-error]="f['nombre'].touched && f['nombre'].invalid"
+        ></ion-input>
+        @if (f['nombre'].touched && f['nombre'].invalid) {
+          <span class="field-error">{{ getFieldError('nombre') }}</span>
+        }
+      </div>
+
+      <!-- Campo: Email -->
+      <div class="form-field">
+        <label class="form-label" for="email">Email</label>
+        <ion-input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="tu@email.com"
+          class="custom-input"
+          [class.input-error]="f['email'].touched && f['email'].invalid"
+        ></ion-input>
+        @if (f['email'].touched && f['email'].invalid) {
+          <span class="field-error">{{ getFieldError('email') }}</span>
+        }
+      </div>
+
+      <!-- Campo: Asunto -->
+      <div class="form-field">
+        <label class="form-label" for="asunto">Asunto</label>
+        <ion-input
+          id="asunto"
+          formControlName="asunto"
+          placeholder="¿Sobre qué querés hablar?"
+          class="custom-input"
+          [class.input-error]="f['asunto'].touched && f['asunto'].invalid"
+        ></ion-input>
+        @if (f['asunto'].touched && f['asunto'].invalid) {
+          <span class="field-error">{{ getFieldError('asunto') }}</span>
+        }
+      </div>
+
+      <!-- Campo: Mensaje -->
+      <div class="form-field">
+        <label class="form-label" for="mensaje">Mensaje</label>
+        <ion-textarea
+          id="mensaje"
+          formControlName="mensaje"
+          placeholder="Escribí tu mensaje acá..."
+          rows="4"
+          class="custom-input"
+          [class.input-error]="f['mensaje'].touched && f['mensaje'].invalid"
+        ></ion-textarea>
+        <!-- Contador de caracteres: cambia de color a warning en 450 y danger en 500 -->
+        <div class="char-counter" [class]="counterColorClass">
+          {{ messageLength }}/500
+        </div>
+        @if (f['mensaje'].touched && f['mensaje'].invalid) {
+          <span class="field-error">{{ getFieldError('mensaje') }}</span>
+        }
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="form-actions">
+        <ion-button
+          type="submit"
+          expand="block"
+          class="btn-submit"
+          [disabled]="contactForm.invalid"
+        >
+          Enviar mensaje
+        </ion-button>
+        <ion-button
+          type="button"
+          expand="block"
+          fill="outline"
+          class="btn-clear"
+          (click)="onClear()"
+        >
+          Limpiar
+        </ion-button>
+      </div>
+
+    </form>
   </div>
 
 </ion-content>
