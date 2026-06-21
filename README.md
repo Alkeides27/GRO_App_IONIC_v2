@@ -65,3 +65,28 @@ ionic serve
 ## Evidencias
 
 Las capturas de pantalla del proceso de desarrollo paso a paso están en la carpeta `evidencias/`.
+
+## Interactividad agregada (Evaluación 2)
+
+### Contacto
+- Formulario reactivo con validaciones por campo (nombre, email, asunto, mensaje).
+- Mensajes de error contextuales que aparecen tras tocar el campo.
+- Contador de caracteres en el mensaje con cambio de color al acercarse al límite.
+- Submit que abre el cliente de correo con los datos prellenados.
+- Botón Limpiar con confirmación previa.
+- Canales (Email, WhatsApp, GitHub, Ubicación) ahora funcionales.
+
+### Inicio
+- Saludo dinámico según la hora del día.
+- Navegación rápida a Perfil y Contacto.
+- Contador local de visitas con localStorage.
+
+### Información Personal
+- Chips de stack interactivas que muestran descripción al tap.
+- Tarjetas de proyecto expandibles con detalle extendido.
+
+## Crédito al trabajo base
+
+Este proyecto parte del trabajo original de Giannefran Radomile (UNETI Barquisimeto)
+para la Evaluación 1 de Programación III. La versión actual agrega la capa de
+interactividad solicitada para la Evaluación 2.
