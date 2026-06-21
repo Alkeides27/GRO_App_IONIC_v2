@@ -110,6 +110,23 @@
   margin: 0 0 44px;
 }
 
+/* Saludo dinámico: aparece encima del nombre */
+.saludo-dinamico {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--gf-accent-primary);
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Contenedor de botones de navegación */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* CTA principal */
 .btn-cta {
   --background: var(--gf-accent-primary);
@@ -129,6 +146,27 @@
 
 .btn-cta:hover {
   transform: translateY(-2px);
+}
+
+/* Botón secundario: outline, menos prominente */
+.btn-secondary {
+  --border-radius: 14px;
+  --border-color: var(--gf-accent-primary);
+  --color: var(--gf-accent-primary);
+  height: 48px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Contador de visitas: texto discreto al pie del card */
+.visit-counter {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--gf-text-muted);
+  text-align: center;
+  margin-top: 28px;
 }
 
 /* Indicador de scroll: línea animada */

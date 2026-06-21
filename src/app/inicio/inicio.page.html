@@ -24,6 +24,9 @@
     <!-- Eyebrow: etiqueta de rol pequeña, en mayúsculas -->
     <p class="eyebrow">Ingeniería en Informática · UNETI · Venezuela</p>
 
+    <!-- Saludo dinámico según la hora del día -->
+    <p class="saludo-dinamico">{{ greeting }}</p>
+
     <!-- Título de impacto: Montserrat 800, enorme -->
     <h1 class="hero-title">¡Hola, soy<br><span class="name-accent">GianneFran.</span></h1>
 
@@ -32,10 +35,24 @@
       Apasionada por la reutilización y optimización de software. Creo soluciones que impactan positivamente el entorno social y tecnológico.
     </p>
 
-    <!-- CTA: botón sólido, expand block en mobile -->
-    <ion-button class="btn-cta" routerLink="/informacion-personal" expand="block">
-      Explorar mi Trayectoria
-    </ion-button>
+    <!-- Botones de navegación -->
+    <div class="nav-buttons">
+      <ion-button class="btn-cta" (click)="goToProfile()" expand="block">
+        Ir a mi perfil
+      </ion-button>
+      <ion-button class="btn-secondary" (click)="goToContact()" expand="block">
+        Contactar
+      </ion-button>
+    </div>
+
+    <!-- Contador de visitas -->
+    <div class="visit-counter">
+      @if (visitCount === 1) {
+        <span>Es tu primera visita 👋🏼</span>
+      } @else {
+        <span>Has visitado esta app {{ visitCount }} veces</span>
+      }
+    </div>
 
     <!-- Indicador discreto de scroll -->
     <div class="scroll-hint" aria-hidden="true">
