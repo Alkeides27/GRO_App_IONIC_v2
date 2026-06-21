@@ -22,7 +22,7 @@
   <!-- Separador visual -->
   <div class="divider" aria-hidden="true"></div>
 
-  <!-- Sección 2: Stack Tecnológico — layout asimétrico, chips grandes -->
+  <!-- Sección 2: Stack Tecnológico — chips interactivas con (click) -->
   <div class="stack-section">
     <p class="section-eyebrow">Stack</p>
     <h2 class="section-title">Tecnologías</h2>
@@ -30,16 +30,16 @@
     <div class="stack-group">
       <p class="stack-label">Frontend</p>
       <div class="chip-row">
-        <ion-chip class="chip-tech"><ion-label>Angular</ion-label></ion-chip>
-        <ion-chip class="chip-tech"><ion-label>Ionic</ion-label></ion-chip>
-        <ion-chip class="chip-tech"><ion-label>React Native</ion-label></ion-chip>
+        <ion-chip class="chip-tech" (click)="showStackInfo('Angular')"><ion-label>Angular</ion-label></ion-chip>
+        <ion-chip class="chip-tech" (click)="showStackInfo('Ionic')"><ion-label>Ionic</ion-label></ion-chip>
+        <ion-chip class="chip-tech" (click)="showStackInfo('React Native')"><ion-label>React Native</ion-label></ion-chip>
       </div>
     </div>
 
     <div class="stack-group">
       <p class="stack-label">Backend</p>
       <div class="chip-row">
-        <ion-chip class="chip-tech chip-featured"><ion-label>Django</ion-label></ion-chip>
+        <ion-chip class="chip-tech chip-featured" (click)="showStackInfo('Django')"><ion-label>Django</ion-label></ion-chip>
       </div>
     </div>
   </div>
@@ -47,19 +47,37 @@
   <!-- Separador visual -->
   <div class="divider" aria-hidden="true"></div>
 
-  <!-- Sección 3: Proyecto Destacado — card de cristal, contenido expandido -->
+  <!-- Sección 3: Proyectos — tarjetas expandibles con botón Ver más / Ver menos -->
   <div class="project-section">
     <p class="section-eyebrow">Proyecto</p>
-    <ion-card class="glass-card project-card">
-      <ion-card-content>
-        <p class="project-tag">PST III</p>
-        <h3 class="project-name">CANTV-APP</h3>
-        <p class="project-desc">
-          Desarrollo de Aplicación Móvil de Gestión de Combustible en los Motogeneradores Eléctricos en CANTV Lara, Región Occidente.
-        </p>
-      </ion-card-content>
-    </ion-card>
+
+    @for (project of projects; track project.name; let i = $index) {
+      <ion-card class="glass-card project-card">
+        <ion-card-content>
+          <p class="project-tag">{{ project.tag }}</p>
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-desc">{{ project.desc }}</p>
+
+          <!-- Descripción extendida: visible solo si el proyecto está expandido -->
+          @if (expandedProjects.has(i)) {
+            <p class="project-extended">{{ project.extendedDesc }}</p>
+          }
+
+          <!-- Botón toggle para expandir/colapsar -->
+          <button class="toggle-btn" (click)="toggleProject(i)">
+            @if (expandedProjects.has(i)) {
+              Ver menos <ion-icon name="chevron-up-outline"></ion-icon>
+            } @else {
+              Ver más <ion-icon name="chevron-down-outline"></ion-icon>
+            }
+          </button>
+        </ion-card-content>
+      </ion-card>
+    }
   </div>
+
+  <!-- Separador visual -->
+  <div class="divider" aria-hidden="true"></div>
 
   <!-- Sección 4: Intereses — chips en flujo libre -->
   <div class="interests-section">
