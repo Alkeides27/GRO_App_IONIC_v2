@@ -181,7 +181,8 @@
   margin-bottom: 8px;
 }
 
-/* Inputs con estilo consistente con el tema oscuro */
+/* Inputs con estilo consistente con el tema oscuro.
+   Focus ring violeta consistente con la identidad del proyecto. */
 .custom-input {
   --background: rgba(255, 255, 255, 0.04);
   --color: var(--gf-text-primary);
@@ -190,9 +191,19 @@
   border: 1px solid var(--gf-border-glass);
   font-family: 'Inter', sans-serif;
   font-size: 15px;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+  &:focus-within {
+    border-color: var(--gf-accent-primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  }
 
   &.input-error {
     border-color: #ef4444;
+
+    &:focus-within {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    }
   }
 }
 
