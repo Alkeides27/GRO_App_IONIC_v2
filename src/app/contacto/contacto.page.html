@@ -73,19 +73,25 @@
     <p class="form-eyebrow">Escribime</p>
     <h2 class="form-title">Enviar mensaje</h2>
 
-    <div class="form-card">
+    <div class="glass-card" style="padding: 28px 24px">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
 
       <!-- Campo: Nombre completo -->
       <div class="form-field">
         <label class="form-label" for="nombre">Nombre completo</label>
-        <ion-input
-          id="nombre"
-          formControlName="nombre"
-          placeholder="Tu nombre"
-          class="custom-input"
-          [class.input-error]="f['nombre'].touched && f['nombre'].invalid"
-        ></ion-input>
+        <div class="input-wrapper">
+          <ion-input
+            id="nombre"
+            formControlName="nombre"
+            placeholder="Tu nombre"
+            class="custom-input"
+            [class.input-error]="f['nombre'].touched && f['nombre'].invalid"
+            [class.input-valid]="f['nombre'].touched && f['nombre'].valid"
+          ></ion-input>
+          @if (f['nombre'].touched && f['nombre'].valid) {
+            <ion-icon name="checkmark-circle" class="field-check"></ion-icon>
+          }
+        </div>
         @if (f['nombre'].touched && f['nombre'].invalid) {
           <span class="field-error">{{ getFieldError('nombre') }}</span>
         }
@@ -94,14 +100,20 @@
       <!-- Campo: Email -->
       <div class="form-field">
         <label class="form-label" for="email">Email</label>
-        <ion-input
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="tu@email.com"
-          class="custom-input"
-          [class.input-error]="f['email'].touched && f['email'].invalid"
-        ></ion-input>
+        <div class="input-wrapper">
+          <ion-input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="tu@email.com"
+            class="custom-input"
+            [class.input-error]="f['email'].touched && f['email'].invalid"
+            [class.input-valid]="f['email'].touched && f['email'].valid"
+          ></ion-input>
+          @if (f['email'].touched && f['email'].valid) {
+            <ion-icon name="checkmark-circle" class="field-check"></ion-icon>
+          }
+        </div>
         @if (f['email'].touched && f['email'].invalid) {
           <span class="field-error">{{ getFieldError('email') }}</span>
         }
@@ -110,13 +122,19 @@
       <!-- Campo: Asunto -->
       <div class="form-field">
         <label class="form-label" for="asunto">Asunto</label>
-        <ion-input
-          id="asunto"
-          formControlName="asunto"
-          placeholder="¿Sobre qué querés hablar?"
-          class="custom-input"
-          [class.input-error]="f['asunto'].touched && f['asunto'].invalid"
-        ></ion-input>
+        <div class="input-wrapper">
+          <ion-input
+            id="asunto"
+            formControlName="asunto"
+            placeholder="¿Sobre qué querés hablar?"
+            class="custom-input"
+            [class.input-error]="f['asunto'].touched && f['asunto'].invalid"
+            [class.input-valid]="f['asunto'].touched && f['asunto'].valid"
+          ></ion-input>
+          @if (f['asunto'].touched && f['asunto'].valid) {
+            <ion-icon name="checkmark-circle" class="field-check"></ion-icon>
+          }
+        </div>
         @if (f['asunto'].touched && f['asunto'].invalid) {
           <span class="field-error">{{ getFieldError('asunto') }}</span>
         }
@@ -125,14 +143,20 @@
       <!-- Campo: Mensaje -->
       <div class="form-field">
         <label class="form-label" for="mensaje">Mensaje</label>
-        <ion-textarea
-          id="mensaje"
-          formControlName="mensaje"
-          placeholder="Escribí tu mensaje acá..."
-          rows="4"
-          class="custom-input"
-          [class.input-error]="f['mensaje'].touched && f['mensaje'].invalid"
-        ></ion-textarea>
+        <div class="input-wrapper">
+          <ion-textarea
+            id="mensaje"
+            formControlName="mensaje"
+            placeholder="Escribí tu mensaje acá..."
+            rows="4"
+            class="custom-input textarea-grow"
+            [class.input-error]="f['mensaje'].touched && f['mensaje'].invalid"
+            [class.input-valid]="f['mensaje'].touched && f['mensaje'].valid"
+          ></ion-textarea>
+          @if (f['mensaje'].touched && f['mensaje'].valid) {
+            <ion-icon name="checkmark-circle" class="field-check field-check--textarea"></ion-icon>
+          }
+        </div>
         <!-- Contador de caracteres: cambia de color a warning en 450 y danger en 500 -->
         <div class="char-counter" [class]="counterColorClass">
           {{ messageLength }}/500

@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonIcon, IonButton, IonInput, IonTextarea, IonToast } from '@ionic/angular/standalone';
 import { ToastController, AlertController } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { mailOutline, logoWhatsapp, logoGithub, locationOutline, chevronForwardOutline } from 'ionicons/icons';
+import { mailOutline, logoWhatsapp, logoGithub, locationOutline, chevronForwardOutline, checkmarkCircle } from 'ionicons/icons';
 
 /*
   Página de contacto interactiva. Se mantiene la lista de canales original
@@ -47,7 +47,7 @@ export class ContactoPage implements OnInit {
     private toastCtrl: ToastController,
     private alertCtrl: AlertController
   ) {
-    addIcons({ mailOutline, logoWhatsapp, logoGithub, locationOutline, chevronForwardOutline });
+    addIcons({ mailOutline, logoWhatsapp, logoGithub, locationOutline, chevronForwardOutline, checkmarkCircle });
   }
 
   ngOnInit() {
