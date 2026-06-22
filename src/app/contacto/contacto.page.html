@@ -73,7 +73,8 @@
     <p class="form-eyebrow">Escribime</p>
     <h2 class="form-title">Enviar mensaje</h2>
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-card">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
 
       <!-- Campo: Nombre completo -->
       <div class="form-field">
@@ -163,6 +164,7 @@
       </div>
 
     </form>
+    </div>
   </div>
 
 </ion-content>
