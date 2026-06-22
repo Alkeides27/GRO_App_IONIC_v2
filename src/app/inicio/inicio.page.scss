@@ -127,37 +127,66 @@
   gap: 12px;
 }
 
-/* CTA principal */
+/* CTA principal: sólido violeta, sin ghost-shadow (anti-patrón impeccable).
+   Altura consistente con el botón secundario para rhythm uniforme. */
 .btn-cta {
   --background: var(--gf-accent-primary);
   --background-hover: var(--gf-accent-hover);
   --background-activated: var(--gf-accent-hover);
   --border-radius: 14px;
   --color: #FAFAFA;
-  --box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
-  height: 56px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.01em;
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-  margin: 0;
-}
-
-.btn-cta:hover {
-  transform: translateY(-2px);
-}
-
-/* Botón secundario: outline, menos prominente */
-.btn-secondary {
-  --border-radius: 14px;
-  --border-color: var(--gf-accent-primary);
-  --color: var(--gf-accent-primary);
-  height: 48px;
+  height: 52px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 15px;
+  letter-spacing: 0.01em;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
   margin: 0;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--gf-accent-primary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Botón secundario: glassmorphism sutil para mantener identidad visual.
+   Mismo border-radius y altura que el primario para consistencia. */
+.btn-secondary {
+  --background: var(--gf-bg-glass);
+  --background-hover: rgba(19, 27, 61, 0.8);
+  --background-activated: rgba(19, 27, 61, 0.9);
+  --border-radius: 14px;
+  --border-color: var(--gf-border-glass);
+  --color: var(--gf-text-primary);
+  height: 52px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--gf-accent-primary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 /* Contador de visitas: texto discreto al pie del card */
