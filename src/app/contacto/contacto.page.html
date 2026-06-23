@@ -70,7 +70,7 @@
 
   <!-- Formulario de contacto reactivo -->
   <div class="form-section">
-    <p class="form-eyebrow">Escribime</p>
+    <p class="form-eyebrow">Escribeme</p>
     <h2 class="form-title">Enviar mensaje</h2>
 
     <div class="glass-card" style="padding: 28px 24px">
@@ -172,6 +172,7 @@
           type="submit"
           expand="block"
           class="btn-submit"
+          [class.btn-submit--ready]="contactForm.valid"
           [disabled]="contactForm.invalid"
         >
           Enviar mensaje

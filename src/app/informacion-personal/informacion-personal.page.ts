@@ -49,7 +49,7 @@ export class InformacionPersonalPage implements OnInit {
       desc: 'Desarrollo de Aplicación Móvil de Gestión de Combustible en los Motogeneradores Eléctricos en CANTV Lara, Región Occidente.',
       // PRD-AMBIGUITY: El PRD indica inventar 2-3 líneas plausibles por proyecto.
       // Se agregó una descripción extendida ficticia pero coherente con el contexto.
-      extendedDesc: 'Tecnologías utilizadas: Django, Ionic, SQLite. Rol: desarrolladora frontend y backend. Estado: en producción interna para CANTV Lara.'
+      extendedDesc: 'Tecnologías utilizadas: Django, React, PostgreSQL. Rol: desarrolladora frontend y backend. Estado: en producción interna para CANTV Lara.'
     }
   ];
 

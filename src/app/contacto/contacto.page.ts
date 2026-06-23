@@ -180,7 +180,7 @@ export class ContactoPage implements OnInit {
   // Funciones para abrir canales externos
   openWhatsApp() {
     // TODO: reemplazar con número real
-    window.open('https://wa.me/+584120000000', '_blank', 'noopener');
+    window.open('https://wa.me/+584120760727', '_blank', 'noopener');
   }
 
   openGitHub() {
